@@ -1,10 +1,12 @@
 // JS for The Psychic Game
 
+
 // DECLARE VARIABLES
 
 let letterBin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// let compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
-let compChoice = "x";
+// fixed dummy compChoice
+// let compChoice = "x";
+let compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
 
 let wins = 0;
 let losses = 0;
@@ -12,13 +14,17 @@ let losses = 0;
 let guessesLeft = 9;
 let yourGuesses = [];
 
+
+// DECLARE FUNCTION EXPRESSION VARIABLES
+
 let reset = function () {
     guessesLeft = 9;
     document.getElementById("uLeft").textContent = guessesLeft;
     yourGuesses = [];
     document.getElementById("uGuess").textContent = yourGuesses;
-    let compChoice = "x";
-    // compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
+    // fixed dummy compChoice
+    // let compChoice = "x";
+    compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
     document.getElementById("cLetter").textContent = compChoice;
 }
 
@@ -48,8 +54,9 @@ let play = function () {
 
 
 
-
+// fixed dummy userChoice
 let userChoice = "x";
+
 
 document.onkeyup = function (event) {
 
