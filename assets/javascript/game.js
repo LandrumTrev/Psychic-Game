@@ -2,27 +2,59 @@
 
 // DECLARE VARIABLES
 
+let letterBin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// let compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
+let compChoice = "x";
+
 let wins = 0;
 let losses = 0;
-let guessesLeft = 9;
-let yourGuesses = [" a", " b", " c"];
-let letterBin = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-let compLetter = "x";
 
-let userKey = "y";
-// let keyPressed = function() {
-//     let x = document.getElementById("uLetter").value;
-//     document.getElementById("uLetter").innerText = x;
-// };
-
-let reset = function() {
+let reset = function () {
     guessesLeft = 9;
     document.getElementById("uLeft").textContent = guessesLeft;
     yourGuesses = [];
     document.getElementById("uGuess").textContent = yourGuesses;
-    compLetter = "z";
-    document.getElementById("cLetter").textContent = compLetter;
+    compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
+    document.getElementById("cLetter").textContent = compChoice;
 }
+
+let guessesLeft = 9;
+let yourGuesses = [" a", " b", " c"];
+
+
+let userChoice = "x";
+
+document.onkeyup = function (event) {
+
+    // THIS STATEMENT DOES NOT WORK
+    // WHY WONT THE VALUE OF THE GLOBAL userChoice VARIABLE CHANGE?
+    userChoice = event.key.toLowerCase();
+
+    if (userChoice === compChoice) {
+        wins++;
+        reset();
+    }
+
+
+}
+
+
+// THIS FUNCTION WORKS
+document.onkeyup = function (event) {
+
+    let keyPress = event.key.toLowerCase();
+
+    if (keyPress === "h") {
+        alert("hi there!");
+    };
+
+}
+
+
+
+
+
+
 
 document.getElementById("uWin").textContent = wins;
 document.getElementById("uLose").textContent = losses;
@@ -30,14 +62,5 @@ document.getElementById("uLeft").textContent = guessesLeft;
 document.getElementById("uGuess").textContent = yourGuesses;
 
 // DEV OUTPUT ONLY--NO OUTPUT FOR PRODUCTION
-document.getElementById("cLetter").textContent = compLetter;
-document.getElementById("uLetter").textContent = userKey;
-
-// document.addEventListener("keyup", function() {
-//     document.getElementById("uLetter").textContent = KeyboardEvent.key;
-// });
-
-// document.getElementById("uLetter").textContent = keyup.key;
-
-
-
+document.getElementById("cLetter").textContent = compChoice;
+document.getElementById("uLetter").textContent = userChoice;
