@@ -56,6 +56,11 @@ document.onkeyup = function (event) {
     // THIS STATEMENT DOES NOT WORK
     // WHY WONT THE VALUE OF THE GLOBAL userChoice VARIABLE CHANGE?
     userChoice = event.key.toLowerCase();
+    
+    // if (userChoice) {
+    //     play();
+    // };
+   
 
 }
 
@@ -89,7 +94,7 @@ document.onkeyup = function (event) {
 
 
 
-
+// WRITE INITIAL VALUES OF VARIABLES ON PAGE LOAD
 
 document.getElementById("uWin").textContent = wins;
 document.getElementById("uLose").textContent = losses;
