@@ -1,0 +1,15 @@
+/* CSS for The Psychic Game  */
+
+main {
+    width: 100%;
+    position: absolute;
+}
+
+#thegame {
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+    top: 100px;
+    padding: 100px;
+    background-color: aliceblue;
+}
