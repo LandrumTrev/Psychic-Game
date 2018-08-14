@@ -48,30 +48,16 @@ let play = function () {
 
 
 // fixed dummy userChoice
-let userChoice = "x";
+let userChoice = "y";
 
 
 document.onkeyup = function (event) {
 
-    // THIS STATEMENT DOES NOT WORK
-    // WHY WONT THE VALUE OF THE GLOBAL userChoice VARIABLE CHANGE?
     userChoice = event.key.toLowerCase();
-    
-    // if (userChoice) {
-    //     play();
-    // };
-   
+    document.getElementById("uLetter").textContent = userChoice;
+    // console.log(userChoice);
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -80,15 +66,15 @@ document.onkeyup = function (event) {
 
 
 // THIS FUNCTION WORKS
-document.onkeyup = function (event) {
+// document.onkeyup = function (event) {
 
-    let keyPress = event.key.toLowerCase();
+//     let keyPress = event.key.toLowerCase();
 
-    if (keyPress === "h") {
-        alert("hi there!");
-    };
+//     if (keyPress === "h") {
+//         alert("hi there!");
+//     };
 
-}
+// }
 
 
 
