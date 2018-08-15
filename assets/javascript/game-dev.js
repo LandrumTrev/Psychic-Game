@@ -4,8 +4,6 @@
 // DECLARE VARIABLES
 
 let letterBin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// fixed dummy compChoice
-// let compChoice = "x";
 let compChoice = letterBin[Math.floor(Math.random() * letterBin.length)];
 
 let wins = 0;
@@ -48,48 +46,21 @@ let play = function () {
 
 
 // fixed dummy userChoice
-let userChoice = "x";
+let userChoice;
 
 
 document.onkeyup = function (event) {
 
-    // THIS STATEMENT DOES NOT WORK
-    // WHY WONT THE VALUE OF THE GLOBAL userChoice VARIABLE CHANGE?
     userChoice = event.key.toLowerCase();
+    document.getElementById("uLetter").textContent = userChoice;
 
+    play();
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// THIS FUNCTION WORKS
-document.onkeyup = function (event) {
-
-    let keyPress = event.key.toLowerCase();
-
-    if (keyPress === "h") {
-        alert("hi there!");
-    };
-
-}
-
-
-
-
-
-
+// WRITE INITIAL VALUES OF VARIABLES ON PAGE LOAD
 
 document.getElementById("uWin").textContent = wins;
 document.getElementById("uLose").textContent = losses;
